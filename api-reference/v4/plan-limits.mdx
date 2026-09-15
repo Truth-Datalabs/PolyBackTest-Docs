@@ -30,7 +30,9 @@ plan; for example, a Free key requesting ETH or SOL receives
 }
 ```
 
-`max_history_days` is the key's enforced 31-, 60-, or 120-day query window.
+`max_history_days` is the key's enforced 31-, 60-, 120-, or 150-day query window.
+The example shows an existing 120-day subscription; Dedicated/Enterprise also
+remains at 120 days. A shared Pro key on the 150-day option returns `150`.
 Actual collected coverage can be shorter for newer markets or backfills still
 in progress. `plan_id` becomes `enterprise` when the selected coin uses an
 Enterprise route. `rate_limits.max_per_minute` is `null` when no separate

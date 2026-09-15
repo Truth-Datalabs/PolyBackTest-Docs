@@ -4328,9 +4328,10 @@
                         "enum": [
                             31,
                             60,
-                            120
+                            120,
+                            150
                         ],
-                        "description": "Maximum historical query window enforced for this key and coin"
+                        "description": "Maximum historical query window enforced for this key and coin: shared Pro supports 31, 60, 120, or 150 days; Dedicated/Enterprise remains at 120. Actual collected coverage may be shorter or have gaps."
                     },
                     "rate_limits": {
                         "type": "object",

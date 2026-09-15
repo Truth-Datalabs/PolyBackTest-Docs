@@ -13,11 +13,11 @@ To ensure fair usage and system stability, PolyBackTest enforces per-user rate l
 | Plan | Requests per Second | Requests per Minute |
 | :--- | :--- | :--- |
 | **Free** | 1 | - |
-| **Pro** | 10 | 300 |
+| **Pro** | 10–50 (selected configuration) | 300–2,000 (selected configuration) |
 | **Enterprise** | Custom | Custom |
 
 <Info>
-  Free-plan users are limited to **1 request per second**. Pro users can burst to **10 requests per second** with a sustained **300 requests per minute**. Enterprise plans ship with custom limits agreed per contract - see your plan details in the [Dashboard](https://polybacktest.com/dashboard?tab=billing).
+  Free-plan users are limited to **1 request per second**. Pro starts at **10 requests per second** with a sustained **300 requests per minute**; higher request-rate configurations are selectable. Enterprise plans ship with custom limits agreed per contract - see your plan details in the [Dashboard](https://polybacktest.com/dashboard?tab=billing).
 </Info>
 
 ### Rate Limit Headers
@@ -53,9 +53,10 @@ v4 error responses include a stable top-level `code` so you can branch on burst 
 
 ## Historical Data Limits
 
-Historical access is separate from request rate limits. PolyBackTest stores up to
-**120 rolling days** of Polymarket crypto data. Each API key can query only the
-history window attached to its account and active plan.
+Historical access is separate from request rate limits and physical storage
+retention. Each API key can query only the history window attached to its
+account and active plan, and only observations actually collected and retained
+are available.
 
 | Plan / Add-on | Historical Data Window |
 | :--- | :--- |
@@ -63,8 +64,15 @@ history window attached to its account and active plan.
 | **Pro** | 31 days by default |
 | **Pro + 60-day history** | 60 days |
 | **Pro + 120-day history** | 120 days |
-| **90-day history** | Reserved for a future add-on |
+| **Pro + 150-day history** | 150 days |
 | **Dedicated / Enterprise** | 120 days |
+
+The 150-day shared Pro option starts at **$59.90/month for 10 RPS and 300 RPM**.
+Higher request rates use the existing Pro pricing formula; the [pricing page](https://polybacktest.com/#pricing)
+and Dashboard display the exact configuration price. The 31-, 60-, and 120-day
+options remain available, and existing subscriptions are not automatically
+repriced or migrated. Existing users can choose a 150-day upgrade in the
+Dashboard. Dedicated/Enterprise history remains unchanged at 120 days.
 
 <Note>
 The plan window is an access limit, not a guarantee that every coin and market
@@ -89,7 +97,7 @@ When `start_time` is omitted on list endpoints, the API automatically clamps the
 ```
 
 <Info>
-The 31-, 60-, or 120-day entitlement is resolved for the authenticated API key
+The 31-, 60-, 120-, or 150-day entitlement is resolved for the authenticated API key
 and enforced on Polymarket market and snapshot endpoints. Dedicated/Enterprise
 keys receive the 120-day entitlement. Check the Billing page in the Dashboard
 to see the entitlement currently attached to your account.

@@ -7,19 +7,20 @@ icon: 'database'
 ## Overview
 
 PolyBackTest maintains high-frequency **Polymarket prediction-market data** with
-Chainlink reference prices. The platform stores up to **120 rolling days** of
-historical crypto-market data with automatic purging. API access to that stored
-history is plan-based: the default window is **31 days**, and Pro users can
-select a **60-day** or **120-day** historical-data add-on.
+Chainlink reference prices. API access to collected history is plan-based: the
+default window is **31 days**, and Pro users can select **60-day**, **120-day**,
+or **150-day** historical-data access. Storage retention and the API query
+entitlement are separate: buying a longer window does not create, restore, or
+backfill observations that were never collected or are no longer retained.
 
 <Info>
-Dedicated/Enterprise plans include access to up to 120 days. The 90-day option
-is reserved for a future plan add-on and is not currently available for
-purchase.
+Dedicated/Enterprise plans remain at up to 120 days. Shared Pro's 150-day option
+starts at **$59.90/month for 10 RPS**. Existing 31-, 60-, and 120-day subscriptions
+keep their purchased terms and can choose an upgrade from the Dashboard.
 </Info>
 
 <Note>
-A 120-day entitlement sets the maximum query window for the key. It does not
+A 150-day entitlement sets the maximum query window for the key. It does not
 create data from before collection began. Until all backfills are verified, the
 oldest available timestamp may vary by coin, market type, or individual market.
 </Note>
@@ -34,9 +35,9 @@ Historical prediction market data for crypto up/down markets (BTC, ETH, SOL).
 
 | Metric | Value |
 | :--- | :--- |
-| **Stored Retention Period** | Up to 120 rolling days |
+| **Stored Coverage** | Varies by coin, market type, collection start, retention, and gaps; not guaranteed by the plan window |
 | **Default API History Window** | 31 days |
-| **Extended API History Windows** | 60 or 120 days (Pro add-on); up to 120 days (Dedicated/Enterprise) |
+| **Extended API History Windows** | 60, 120, or 150 days (shared Pro); up to 120 days (Dedicated/Enterprise) |
 | **Markets Tracked** | 5,000+ |
 | **Total Snapshots** | 60,000,000+ |
 | **Snapshot Frequency** | 8 Snaphots per second per market |
